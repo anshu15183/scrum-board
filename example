@@ -1,0 +1,8 @@
+docker build -t scrum-app .
+docker run -d --name scrum-app -p 8080:8080 --network dev-net -e POSTGRES_PASSWORD=scrum -e POSTGRES_DB=scrum -e POSTGRES_USER=scrum -e DB_SERVER=scrum-postgres scrum-app
+
+docker build -t scrum-ui .
+docker run -d --name scrum-ui -p 4200:80 --network dev-net scrum-ui
+
+
+docker run -d --name scrum-postgres --network dev-net -e POSTGRES_PASSWORD=scrum -e POSTGRES_DB=scrum -e POSTGRES_USER=scrum -p 5432:5432 postgres:9.6-alpine
