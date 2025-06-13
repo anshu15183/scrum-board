@@ -16,6 +16,7 @@ services:
     restart: unless-stopped
 
   scrum-app:
+    image: "anshu1518/scrum-app"
     build: ./scrum-app
     container_name: scrum-app
     ports:
@@ -30,6 +31,7 @@ services:
     restart: unless-stopped
 
   scrum-ui:
+    image: "anshu1518/scrum-ui"
     build: ./scrum-ui
     container_name: scrum-ui
     ports:
